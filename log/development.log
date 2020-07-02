@@ -919,3 +919,58 @@ Processing by ArticlesController#show as HTML
 Completed 200 OK in 3125ms (Views: 2859.1ms | ActiveRecord: 14.2ms | Allocations: 4020)
 
 
+Started GET "/articles" for 127.0.0.1 at 2020-07-02 22:24:23 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/articles" for 127.0.0.1 at 2020-07-02 22:24:35 +0100
+Processing by ArticlesController#index as HTML
+Completed 500 Internal Server Error in 169ms (ActiveRecord: 0.0ms | Allocations: 3385)
+
+
+  
+NoMethodError (undefined method `all?' for #<Class:0x00007fc9085853f8>
+Did you mean?  all):
+  
+app/controllers/articles_controller.rb:3:in `index'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#index as HTML
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.0ms | Allocations: 3599)
+
+
+  
+NoMethodError (undefined method `all?' for #<Class:0x00007fc908748500>
+Did you mean?  all):
+  
+app/controllers/articles_controller.rb:3:in `index'
+Started GET "/articles" for 127.0.0.1 at 2020-07-02 22:25:04 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:10
+  Rendered articles/index.html.erb within layouts/application (Duration: 106.1ms | Allocations: 4518)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 305ms (Views: 251.0ms | ActiveRecord: 49.8ms | Allocations: 9190)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2020-07-02 22:25:13 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 39.4ms | Allocations: 125)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 145ms (Views: 119.8ms | ActiveRecord: 0.3ms | Allocations: 4385)
+
+
+Started GET "/articles/2" for 127.0.0.1 at 2020-07-02 22:25:16 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 10)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.1ms | Allocations: 3997)
+
+
